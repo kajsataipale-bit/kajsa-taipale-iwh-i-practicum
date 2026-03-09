@@ -58,6 +58,10 @@ table {
     width: 100%;
 }
 
+th {
+    text-align: left;
+}
+
 .form-wrapper {
     font-size: 18px;
     max-width: 768px;
