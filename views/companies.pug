@@ -9,5 +9,6 @@ html
         .cards 
             each company in companies
                 .card 
-                    h2.card__name #{company.properties.name}  #{company.properties.domain}
+                    h2.card__name #{company.properties.name}  
+                    p.card__name #{company.properties.domain}
                     p.card__email #{company.properties.description}

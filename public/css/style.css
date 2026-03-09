@@ -6,8 +6,13 @@ body, * {
     padding: 0;
 }
 
-h1 {
+.home {
     margin: 1rem;
+
+}
+
+.home__link {
+    
 }
 
 .cards {
