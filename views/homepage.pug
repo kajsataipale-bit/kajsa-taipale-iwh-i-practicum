@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+  body
+    h1 Custom Object Records
+
+    a(href="/update-cobj") Add to this table
+
+if data.length
+      each company in data
+        div
+          p Property 1: #{record.properties.property1}
+          p Property 2: #{record.properties.property2}
+          p Property 3: #{record.properties.property3}
+          hr
+else
+    p No records found.
