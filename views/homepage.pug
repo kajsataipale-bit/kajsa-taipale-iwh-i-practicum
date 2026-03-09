@@ -7,12 +7,12 @@ html
 
     a(href="/update-cobj") Add to this table
 
-if data.length
-      each company in data
+if companies.length
+      each company in companies
         div
-          p Property 1: #{record.properties.property1}
-          p Property 2: #{record.properties.property2}
-          p Property 3: #{record.properties.property3}
+          p Property 1: #{company.properties.name}
+          p Property 2: #{company.properties.domain}
+          p Property 3: #{company.properties.description}
           hr
 else
     p No records found.
