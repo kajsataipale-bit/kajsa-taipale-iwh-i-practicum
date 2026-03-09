@@ -5,8 +5,11 @@ html
     meta(name="viewport" content="width=device-width, initial-scale=1")
     link(rel="stylesheet", href="/css/style.css")
   body
-    h1 Update custom objects
-    a(href="/") Return to the homepage
+    h1.home__title Update custom objects
+
+    div.home__wrapper
+      div.home__icon--back ⬅️
+      a.home__link(href="/") Return to the homepage
 
     form.form-wrapper(action="/update-cobj" method="POST")
       label Company Name
@@ -15,7 +18,7 @@ html
       label Company Domain
       input(type="text" name="domain")
 
-      label Description
-      input(type="text" name="description")
+      label Archived
+      input(type="text" name="archived")
 
       button(type="submit") Submit  

@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
 	try {
 		const resp = await axios.get(customCompanyUrl, { headers });
 		const companies = resp.data.results;
-		console.log(companies,'companies')
+		console.log(resp.data.results);
 		res.render('homepage', { title: 'Homepage', companies });
 	} catch (error) {
 		console.error(error.response?.data || error.message);
@@ -49,7 +49,7 @@ app.post('/update-cobj', async (req, res) => {
 		properties: {
 			name: req.body.name, 
 			domain: req.body.domain,
-			description: req.body.description,
+			archived: req.archived,
 		},
 	};
 

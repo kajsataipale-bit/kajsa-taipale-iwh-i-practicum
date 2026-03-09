@@ -2,21 +2,26 @@ doctype html
 html
   head
     title= title
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="/css/style.css")
   body
     h1.home__title Custom Object Records
 
-    a.home__link(href="/update-cobj") Add to this table
+    div.home__wrapper
+      a.home__link(href="/update-cobj") Add to this table
+      div.home__icon--plus ➕
 
-    table(border="1")
-      thead
-        tr
-          th name
-          th domain
-          th description
-
-      tbody
-        each company in companies
+    div.form-wrapper
+      table(border="1")
+        thead
           tr
-            td= company.properties.name
-            td= company.properties.domain
-            td= company.properties.description
+            th name
+            th domain
+            th archived
+
+        tbody
+          each company in companies
+            tr
+              td= company.properties.name
+              td= company.properties.domain
+              td= company.archived
