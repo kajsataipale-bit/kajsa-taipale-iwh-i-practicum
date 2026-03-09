@@ -11,7 +11,7 @@ app.use(express.static(__dirname + '/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-const customObjectUrl = 'https://api.hubapi.com/crm/v3/objects/companies';
+const customCompanyUrl = 'https://api.hubapi.com/crm/v3/objects/companies';
 // ============================================
 // ROUTE 1 - Homepage: fetch custom objects
 // ============================================
@@ -22,8 +22,9 @@ app.get('/', async (req, res) => {
 	};
 
 	try {
-		const resp = await axios.get(url, { headers });
+		const resp = await axios.get(customCompanyUrl, { headers });
 		const companies = resp.data.results;
+		console.log(companies,'companies')
 		res.render('homepage', { title: 'Homepage', companies });
 	} catch (error) {
 		console.error(error.response?.data || error.message);
@@ -58,7 +59,7 @@ app.post('/update-cobj', async (req, res) => {
 	};
 
 	try {
-		await axios.post(customObjectUrl, newObject, { headers });
+		await axios.post(customCompanyUrl, newObject, { headers });
 		console.log('New object created:', req.body);
 		res.redirect('/');
 	} catch (error) {

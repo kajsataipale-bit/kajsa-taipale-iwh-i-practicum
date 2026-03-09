@@ -7,3 +7,15 @@ html
   body
     h1 Update custom objects
     a(href="/") Return to the homepage
+
+    form(action="/update-cobj" method="POST")
+      label Company Name
+      input(type="text" name="name")
+
+      label Company Domain
+      input(type="text" name="domain")
+
+      label Description
+      input(type="text" name="description")
+
+      button(type="submit") Submit  
